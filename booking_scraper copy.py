@@ -72,12 +72,14 @@ def scrape_booking_almeria(checkin_date, checkout_date):
                     clean_url = full_url.split('?')[0]
                     hotel_data['url'] = clean_url
 
-                    # Extract ID from the URL path (text after last '/' and before '.html')
-                    last_part = clean_url.split('/')[-1]
-                    hotel_id_with_extension = last_part.split('.html')[0]
-                    # Eliminar todo lo que va después del primer punto inclusive
-                    hotel_id = hotel_id_with_extension.split('.')[0]
-                    hotel_data['id'] = hotel_id
+                    # Extract ID from 'aid' parameter in the URL
+                    parsed_url = urlparse(full_url)
+                    query_params = parse_qs(parsed_url.query)
+                    aid = query_params.get('aid', [None])[0] # Get the first value of 'aid'
+                    try:
+                        hotel_data['id'] = int(aid) if aid else None
+                    except (ValueError, TypeError):
+                        hotel_data['id'] = None
 
                 else:
                     hotel_data['url'] = None
@@ -180,29 +182,15 @@ def scrape_booking_almeria(checkin_date, checkout_date):
             # Precio
             try:
                 price_element = hotel.select_one('span[data-testid="price-and-discounted-price"]')
-                price_text = None
                 if price_element:
-                     price_text = price_element.get_text(strip=True)
+                     hotel_data['Precio'] = price_element.get_text(strip=True)
                 else:
                     # Sometimes the price is in a different structure
                     price_element_alt = hotel.select_one('div[data-testid="price-and-discounted-price"] span')
-                    if price_element_alt:
-                        price_text = price_element_alt.get_text(strip=True)
-
-                if price_text:
-                    # Clean the price string: remove '€', spaces, and replace comma with dot
-                    cleaned_price_text = price_text.replace('€', '').replace(' ', '').replace(',', '.')
-                    try:
-                        # Convert to integer
-                        hotel_data['Precio'] = int(cleaned_price_text)
-                    except (ValueError, TypeError):
-                        print(f"Could not convert price to float: {cleaned_price_text}")
-                        hotel_data['Precio'] = None
-                else:
-                    hotel_data['Precio'] = None
+                    hotel_data['Precio'] = price_element_alt.get_text(strip=True) if price_element_alt else None
 
             except Exception as e:
-                print(f"Error extracting or processing Precio: {e}")
+                print(f"Error extracting Precio: {e}")
                 hotel_data['Precio'] = None
 
 
@@ -216,18 +204,18 @@ def scrape_booking_almeria(checkin_date, checkout_date):
                         'id': hotel_data.get('id'),
                         'nombre': hotel_data.get('nombre'),
                         'marca': hotel_details.get('marca'), # Get marca from hotel_details
-                        'destacados': hotel_details.get('Destacados'), # Add Destacados
-                        'localidad': hotel_data.get('Dirección'),
-                        'coordenadas': hotel_details.get('Coordenadas'), # Get Coordenadas from hotel_details
-                        'servicios': hotel_details.get('Servicios populares'), # Get Servicios populares from hotel_details
-                        'mascotas': hotel_details.get('¿Mascotas?'), # Get ¿Mascotas? from hotel_details
-                        'descripcion': hotel_details.get('Descripción'), # Get Descripción from hotel_details
-                        'puntuacion': hotel_data.get('Puntuación'),
-                        'opinion': hotel_data.get('Opinión'),
-                        'comentarios': hotel_data.get('Numero comentarios'),
-                        'fechaEntrada': hotel_data.get('Fecha entrada'),
-                        'fechaSalida': hotel_data.get('Fecha salida'),
-                        'precio': hotel_data.get('Precio'),
+                        'Destacados': hotel_details.get('Destacados'), # Add Destacados
+                        'Dirección': hotel_data.get('Dirección'),
+                        'Coordenadas': hotel_details.get('Coordenadas'), # Get Coordenadas from hotel_details
+                        'Servicios populares': hotel_details.get('Servicios populares'), # Get Servicios populares from hotel_details
+                        '¿Mascotas?': hotel_details.get('¿Mascotas?'), # Get ¿Mascotas? from hotel_details
+                        'Descripción': hotel_details.get('Descripción'), # Get Descripción from hotel_details
+                        'Puntuación': hotel_data.get('Puntuación'),
+                        'Opinión': hotel_data.get('Opinión'),
+                        'Numero comentarios': hotel_data.get('Numero comentarios'),
+                        'Fecha entrada': hotel_data.get('Fecha entrada'),
+                        'Fecha salida': hotel_data.get('Fecha salida'),
+                        'Precio': hotel_data.get('Precio'),
                     }
                     # Remove keys with None or empty list values to keep the output clean
                     hotel_data = {k: v for k, v in ordered_hotel_data.items() if v is not None and v != []}
@@ -411,8 +399,8 @@ def scrape_hotel_details(url):
 
 if __name__ == "__main__":
     # Use the dates provided by the user
-    checkin = "2025-05-16"
-    checkout = "2025-05-17"
+    checkin = "2025-05-08"
+    checkout = "2025-05-09"
 
     print(f"Starting scraping for Almería from {checkin} to {checkout}...")
     hotels_data = scrape_booking_almeria(checkin, checkout)

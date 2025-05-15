@@ -3,7 +3,7 @@
         "URL hotel": "https://www.booking.com/hotel/es/husagranfamaalmeria.es.html",
         "ID Hotel": "304142",
         "Nombre": "Sercotel Gran Fama",
-        "Marca": "Sercotel Hoteles",
+        "marca": "Sercotel Hoteles",
         "Dirección": "Almería",
         "Coordenadas": "36.85179920876701,-2.446822375059128",
         "Servicios populares": [
@@ -29,7 +29,7 @@
         "URL hotel": "https://www.booking.com/hotel/es/elbaalmeria.es.html",
         "ID Hotel": "304142",
         "Nombre": "Elba Almeria Business & Convention Hotel",
-        "Marca": "Hoteles Elba",
+        "marca": "Hoteles Elba",
         "Dirección": "Almería",
         "Coordenadas": "36.855547825446784,-2.445472031877216",
         "Servicios populares": [
@@ -77,7 +77,7 @@
         "URL hotel": "https://www.booking.com/hotel/es/torreluz-senior.es.html",
         "ID Hotel": "304142",
         "Nombre": "Crisol Almería",
-        "Marca": "Crisol",
+        "marca": "Crisol",
         "Dirección": "Almería",
         "Coordenadas": "36.84114113514411,-2.464600056409836",
         "Servicios populares": [
@@ -99,7 +99,7 @@
         "URL hotel": "https://www.booking.com/hotel/es/playaluna.es.html",
         "ID Hotel": "304142",
         "Nombre": "Hotel Best Roquetas",
-        "Marca": "Best Hotels",
+        "marca": "Best Hotels",
         "Destacados": [
             "Frente a la playaCertificación de sostenibilidad"
         ],
@@ -256,7 +256,7 @@
         "URL hotel": "https://www.booking.com/hotel/es/alua-golf-trinidad.es.html",
         "ID Hotel": "304142",
         "Nombre": "Alua Golf Trinidad",
-        "Marca": "Alua Hotels & Resorts",
+        "marca": "Alua Hotels & Resorts",
         "Destacados": [
             "Frente a la playaCertificación de sostenibilidad"
         ],
@@ -287,7 +287,7 @@
         "URL hotel": "https://www.booking.com/hotel/es/granhotelalmeria.es.html",
         "ID Hotel": "304142",
         "Nombre": "Ohtels Gran Hotel Almeria",
-        "Marca": "Ohtels",
+        "marca": "Ohtels",
         "Destacados": [
             "PlayaCertificación de sostenibilidad"
         ],
@@ -373,7 +373,7 @@
         "URL hotel": "https://www.booking.com/hotel/es/portomagno-by-alegria.es.html",
         "ID Hotel": "304142",
         "Nombre": "Hotel Moon Dreams Portomagno",
-        "Marca": "SOHO Boutique",
+        "marca": "SOHO Boutique",
         "Destacados": [
             "Frente a la playa"
         ],
@@ -403,7 +403,7 @@
         "URL hotel": "https://www.booking.com/hotel/es/roquetas-beach-roquetas-de-mar.es.html",
         "ID Hotel": "304142",
         "Nombre": "Moon Dreams Roquetas",
-        "Marca": "SOHO Boutique",
+        "marca": "SOHO Boutique",
         "Destacados": [
             "Travel Proud"
         ],
@@ -433,7 +433,7 @@
         "URL hotel": "https://www.booking.com/hotel/es/alegria-colonial-mar-aquafun.es.html",
         "ID Hotel": "304142",
         "Nombre": "ALEGRIA Colonial Mar Aquafun",
-        "Marca": "Alegria Hotels",
+        "marca": "Alegria Hotels",
         "Destacados": [
             "Frente a la playaTravel Proud"
         ],
@@ -519,7 +519,7 @@
         "URL hotel": "https://www.booking.com/hotel/es/best-sabinal.es.html",
         "ID Hotel": "304142",
         "Nombre": "Hotel Best Sabinal",
-        "Marca": "Best Hotels",
+        "marca": "Best Hotels",
         "Destacados": [
             "Frente a la playa"
         ],
@@ -550,7 +550,7 @@
         "URL hotel": "https://www.booking.com/hotel/es/best-mojacar.es.html",
         "ID Hotel": "304142",
         "Nombre": "Hotel Best Mojácar",
-        "Marca": "Best Hotels",
+        "marca": "Best Hotels",
         "Destacados": [
             "Frente a la playaCertificación de sostenibilidad"
         ],
@@ -581,7 +581,7 @@
         "URL hotel": "https://www.booking.com/hotel/es/almeria.es.html",
         "ID Hotel": "304142",
         "Nombre": "Exe Almería Centro",
-        "Marca": "Exe Hotels",
+        "marca": "Exe Hotels",
         "Dirección": "Almería",
         "Coordenadas": "36.840777289874524,-2.4650144577026367",
         "Servicios populares": [
