@@ -1,0 +1,746 @@
+[
+    {
+        "url": "https://www.booking.com/hotel/es/moon-amp-spa.es.html",
+        "id": "moon-amp-spa",
+        "nombre": "Moon Hotel & SPA.",
+        "destacados": [
+            "Frente a la playa"
+        ],
+        "direccion": "Puerto Deportivo de Aguadulce S/N, 04720 Aguadulce, España",
+        "coordenadas": {
+            "latitud": 36.81574919114552,
+            "longitud": -2.560540399791762
+        },
+        "servicios": [
+            "Piscina al aire libre",
+            "Parking en el alojamiento",
+            "WiFi gratis",
+            "Situado frente a la playa",
+            "Spa y centro de bienestar",
+            "Restaurante",
+            "Habitaciones familiares",
+            "Gimnasio",
+            "Bar",
+            "Muy buen desayuno"
+        ],
+        "mascotas": "Información no disponible",
+        "descripcion": "Moon Hotel & SPA. Ofrece alojamiento de 4 estrellas en Aguadulce, frente a la playa, y tiene piscina de temporada al aire libre, centro de fitness y salón de uso común. Este alojamiento ofrece restaurante, servicio de habitaciones y recepción 24 horas, además de wifi gratis en todo el alojamiento. El bar es ideal para tomar algo.\n\nEn el hotel, todas las habitaciones cuentan con escritorio. Las unidades del alojamiento tienen baño privado con ducha y artículos de aseo gratuitos, además de TV de pantalla plana y aire acondicionado. Algunas habitaciones cuentan con terraza. En Moon Hotel & SPA., las habitaciones disponen de ropa de cama y toallas.\n\nPlaya de Aguadulce está a 4 min a pie del alojamiento, y Campo de Golf La Envía está a 7,8 km. El aeropuerto (Aeropuerto de Almería) está a 18 km.",
+        "opinion": 8.9,
+        "comentarios": 1,
+        "fechaEntrada": "2025-05-17",
+        "fechaSalida": "2025-05-18",
+        "precio": 88
+    },
+    {
+        "url": "https://www.booking.com/hotel/es/alegria-colonial-mar-aquafun.es.html",
+        "id": "alegria-colonial-mar-aquafun",
+        "nombre": "ALEGRIA Colonial Mar Aquafun",
+        "marca": "Alegria Hotels",
+        "destacados": [
+            "Frente a la playa",
+            "Travel Proud"
+        ],
+        "direccion": "Urbanización Las Salinas, s/n, 04740 Roquetas de Mar, España",
+        "coordenadas": {
+            "latitud": 36.7723350381534,
+            "longitud": -2.6045966148376465
+        },
+        "servicios": [
+            "Piscina al aire libre",
+            "Parking privado",
+            "WiFi gratis",
+            "Situado frente a la playa",
+            "Habitaciones familiares",
+            "Adaptado personas de movilidad reducida",
+            "Habitaciones sin humo",
+            "Restaurante",
+            "Bar",
+            "Muy buen desayuno"
+        ],
+        "mascotas": "Información no disponible",
+        "descripcion": "El ALEGRIA Colonial Mar goza de una ubicación ideal en el paseo marítimo de Roquetas de Mar y alberga varias piscinas al aire libre rodeadas de jardines. Las habitaciones son amplias y disponen de balcón amueblado con vistas al mar.\n\nEl ALEGRIA Colonial Mar cuenta con sala de juegos y piscinas al aire libre tanto para adultos como para niños. Además, hay WiFi gratuita en las zonas comunes.\n\nTodas las habitaciones incluye aire acondicionado, TV, sofá cama y baño privado con secador de pelo. La recepción proporciona caja fuerte por un suplemento.\n\nEl ALEGRIA Colonial Mar se halla a 25 km del centro de Almería y a 35 minutos en coche del aeropuerto de Almería.",
+        "opinion": 8.2,
+        "comentarios": 5,
+        "fechaEntrada": "2025-05-17",
+        "fechaSalida": "2025-05-18",
+        "precio": 89
+    },
+    {
+        "url": "https://www.booking.com/hotel/es/indalia-garden-spa.es.html",
+        "id": "indalia-garden-spa",
+        "nombre": "Cabogata Beach Hotel",
+        "destacados": [
+            "Frente a la playa",
+            "Travel Proud"
+        ],
+        "direccion": "de los Juegos de Casablanca, s/n (Urbanización el Toyo), 04131 Retamar, España",
+        "coordenadas": {
+            "latitud": 36.834989878104466,
+            "longitud": -2.3172569274902344
+        },
+        "servicios": [
+            "3 piscinas",
+            "Spa y centro de bienestar",
+            "Parking privado",
+            "Situado frente a la playa",
+            "Habitaciones sin humo",
+            "Gimnasio",
+            "Adaptado personas de movilidad reducida",
+            "Tetera/cafetera en todas las habitaciones",
+            "Bar",
+            "Muy buen desayuno"
+        ],
+        "mascotas": "Información no disponible",
+        "descripcion": "Tras una completa y lujosa reforma, el nuevo hotel de 5 estrellas Cabogata Beach, enclavado en un lugar paradisíaco frente a la playa (con vistas panorámicas al cabo de Gata, a la bahía de Almería y al mar Mediterráneo), combina el ambiente cosmopolita de un hotel urbano de 5 estrellas con el encanto inigualable de un complejo.\n\nDebido a su magnífica ubicación, el Cabogata Beach es el punto de partida ideal para explorar la increíble costa almeriense. Se halla a pocos kilómetros del aeropuerto y cerca de la ciudad de Almería, del campo de golf Alborán y del cabo de Gata, declarado Patrimonio de la Humanidad.",
+        "opinion": 8.3,
+        "comentarios": 3,
+        "fechaEntrada": "2025-05-17",
+        "fechaSalida": "2025-05-18",
+        "precio": 109
+    },
+    {
+        "url": "https://www.booking.com/hotel/es/torreluz-senior.es.html",
+        "id": "torreluz-senior",
+        "nombre": "Crisol Almería",
+        "marca": "Crisol",
+        "direccion": "Tenor Iribarne, 15, 04001 Almería, España",
+        "coordenadas": {
+            "latitud": 36.84114113514411,
+            "longitud": -2.464600056409836
+        },
+        "servicios": [
+            "Parking privado",
+            "WiFi gratis",
+            "Habitaciones sin humo",
+            "Desayuno"
+        ],
+        "mascotas": "Información no disponible",
+        "descripcion": "El Crisol Almería se encuentra en el centro de Almería, a 30 metros de la plaza Puerta de Purchena. Ofrece habitaciones con aire acondicionado y WiFi gratuita.\n\nLas habitaciones dobles del Crisol Almería cuentan con TV y baño privado con artículos de aseo gratuitos y ducha. La ropa de cama y las toallas están incluidas. Hay calefacción.\n\nPor las mañanas se sirve un desayuno continental en la sala de desayunos. El establecimiento se encuentra además a 5 minutos a pie de numerosos restaurantes y bares de tapas.\n\nEl hotel está situado a escasos minutos de la alcazaba y de la catedral. A solo 20 metros se encuentran los refugios antiaéreos de la Guerra Civil. El aeropuerto de Almería está a 8 km.",
+        "opinion": 8.1,
+        "comentarios": 4,
+        "fechaEntrada": "2025-05-17",
+        "fechaSalida": "2025-05-18",
+        "precio": 72
+    },
+    {
+        "url": "https://www.booking.com/hotel/es/granhotelalmeria.es.html",
+        "id": "granhotelalmeria",
+        "nombre": "Ohtels Gran Hotel Almeria",
+        "marca": "Ohtels",
+        "destacados": [
+            "Playa",
+            "Certificación de sostenibilidad"
+        ],
+        "direccion": "Avenida Reina Regente, 8, 04001 Almería, España",
+        "coordenadas": {
+            "latitud": 36.83447382213906,
+            "longitud": -2.463433444545444
+        },
+        "servicios": [
+            "Piscina al aire libre",
+            "Parking privado",
+            "WiFi gratis",
+            "Habitaciones familiares",
+            "Habitaciones sin humo",
+            "Adaptado personas de movilidad reducida",
+            "Servicio de habitaciones",
+            "Bar",
+            "Desayuno"
+        ],
+        "mascotas": "Información no disponible",
+        "descripcion": "El Ohtels Gran Hotel Almeria ofrece vistas al mar desde su ubicación junto al puerto de Almería, a 10 minutos a pie de la playa. También cuenta con piscina al aire libre y WiFi gratuita.\n\nLas cómodas habitaciones del Ohtels Gran Hotel Almeria presentan una decoración luminosa de estilo tradicional y cuentan con aire acondicionado y balcón con vistas al mar. Las habitaciones también tienen minibar y TV vía satélite.\n\nEl restaurante sirve un desayuno buffet y cocina tradicional española. También alberga un bar.\n\nEl Ohtels Gran Hotel Almeria tiene vistas a la Alcazaba y se encuentra junto al parque Salmerón. La catedral de Almería está a 1 km.\n\nEn la recepción 24 horas del Ohtels Gran Hotel Almeria se ofrece servicio de guardería y de alquiler de coches. El establecimiento cuenta con aparcamiento subterráneo",
+        "opinion": 6.7,
+        "comentarios": 31,
+        "fechaEntrada": "2025-05-17",
+        "fechaSalida": "2025-05-18",
+        "precio": 94
+    },
+    {
+        "url": "https://www.booking.com/hotel/es/torreluz-iii.es.html",
+        "id": "torreluz-iii",
+        "nombre": "Nuevo Torreluz",
+        "direccion": "Plaza Flores, 10, 04001 Almería, España",
+        "coordenadas": {
+            "latitud": 36.84078289485317,
+            "longitud": -2.465304285333332
+        },
+        "servicios": [
+            "Parking privado",
+            "WiFi gratis",
+            "Habitaciones familiares",
+            "Gimnasio",
+            "Habitaciones sin humo",
+            "Adaptado personas de movilidad reducida",
+            "Bar",
+            "Buen desayuno"
+        ],
+        "mascotas": "Información no disponible",
+        "descripcion": "El Nuevo Torreluz está situado en la plaza Flores, a 5 minutos a pie de la catedral de Almería y la Alcazaba. El establecimiento ofrece habitaciones modernas con WiFi gratuita, TV vía satélite y baño privado.\n\nTambién hay un bar con terraza, la Taberna Nuevo Torreluz, donde se pueden tomar tapas y el desayuno.\n\nEl establecimiento alberga un centro de bienestar disponible por un suplemento. Algunos tipos de habitación incluyen acceso gratuito al spa. Además, hay un centro de fitness con cintas de correr, cross-trainers elípticos, bicicletas, máquinas multifuncionales y máquinas de cables.\n\nEl Nuevo Torreluz está situado en el centro histórico de Almería, cerca de la plaza principal, entre el ayuntamiento, la catedral y el paseo de Almería. En la zona hay varias tiendas, bares y restaurantes. El puerto está a 12 minutos a pie y la playa, a unos 20 minutos a pie.\n\nEl paseo de Almería se encuentra a 100 metros del establecimiento y cuenta con varias paradas de autobús que comunican con la playa y la universidad. El aeropuerto de Almería está aproximadamente a 15 minutos en coche.",
+        "opinion": 8.3,
+        "comentarios": 3,
+        "fechaEntrada": "2025-05-17",
+        "fechaSalida": "2025-05-18",
+        "precio": 91
+    },
+    {
+        "url": "https://www.booking.com/hotel/es/playa-terreros-san-juan-de-los-terreros.es.html",
+        "id": "playa-terreros-san-juan-de-los-terreros",
+        "nombre": "Hotel Playa Terreros",
+        "destacados": [
+            "Playa"
+        ],
+        "direccion": "C. Bailén, 4, 04648 San Juan de los Terreros, España",
+        "coordenadas": {
+            "latitud": 37.359849,
+            "longitud": -1.6564744999999998
+        },
+        "servicios": [
+            "WiFi gratis",
+            "Habitaciones sin humo",
+            "Restaurante",
+            "Desayuno"
+        ],
+        "mascotas": "Información no disponible",
+        "descripcion": "Hotel Playa Terreros está en San Juan de los Terreros, a 5 min a pie de Cala Cuartel, y ofrece vistas a la ciudad. Este hotel de 2 estrellas ofrece terraza y tiene habitaciones con aire acondicionado, wifi gratis y baño privado. Este alojamiento libre de humo se encuentra a 3 min a pie de Cala Costa Tranquila.\n\nLas habitaciones de este alojamiento están equipadas con TV. En el hotel, todas las habitaciones están equipadas con ropa de cama y toallas.\n\nHay opciones buffet o continentales de desayuno disponibles en Hotel Playa Terreros.\n\nLa clientela puede practicar actividades en San Juan de los Terreros y alrededores, como pesca, snorkel y ciclismo.\n\nCala El Invencible está a 5 min a pie del alojamiento, y Marina Golf Mojácar está a 35 km. El aeropuerto (Aeropuerto internacional Región de Murcia) está a 82 km.",
+        "opinion": 7.6,
+        "comentarios": 126,
+        "fechaEntrada": "2025-05-17",
+        "fechaSalida": "2025-05-18",
+        "precio": 65
+    },
+    {
+        "url": "https://www.booking.com/hotel/es/husacostasol.es.html",
+        "id": "husacostasol",
+        "nombre": "Hotel Costasol",
+        "destacados": [
+            "Traslado aeropuerto",
+            "Certificación de sostenibilidad"
+        ],
+        "direccion": "Paseo de Almería, 58, 04001 Almería, España",
+        "coordenadas": {
+            "latitud": 36.83672490731131,
+            "longitud": -2.463223040194862
+        },
+        "servicios": [
+            "Parking",
+            "WiFi gratis",
+            "Habitaciones familiares",
+            "Traslado aeropuerto",
+            "Servicio de habitaciones",
+            "Buen desayuno"
+        ],
+        "mascotas": "Información no disponible",
+        "descripcion": "El Costasol se encuentra en la avenida principal de Almería, una ubicación ideal para visitar la ciudad. Ofrece conexión Wi-Fi gratuita y habitaciones con TV vía satélite y minibar con agua mineral gratuita.\n\nEl Hotel Costasol está a 500 metros de la catedral de Almería, a solo 5 minutos a pie del puerto deportivo y cerca de las playas. Además, está bien comunicado con las estaciones de tren y autobús, que se encuentran a 900 metros.\n\nEl Costasol ofrece tratamientos faciales y de belleza, que deben reservarse con 24 horas de antelación. También hay servicio de guardería.\n\nTodas las habitaciones presentan una decoración moderna y tienen el suelo de madera, un escritorio y un baño moderno.",
+        "opinion": 8.6,
+        "comentarios": 2,
+        "fechaEntrada": "2025-05-17",
+        "fechaSalida": "2025-05-18",
+        "precio": 91
+    },
+    {
+        "url": "https://www.booking.com/hotel/es/best-mojacar.es.html",
+        "id": "best-mojacar",
+        "nombre": "Hotel Best Mojácar",
+        "marca": "Best Hotels",
+        "destacados": [
+            "Frente a la playa",
+            "Certificación de sostenibilidad"
+        ],
+        "direccion": "Costa de Levante, 2 (Urb Marina de la Torre), 04638 Mojácar, España",
+        "coordenadas": {
+            "latitud": 37.158157557694885,
+            "longitud": -1.8261632323265076
+        },
+        "servicios": [
+            "2 piscinas",
+            "Parking privado",
+            "Spa y centro de bienestar",
+            "Situado frente a la playa",
+            "WiFi gratis",
+            "Habitaciones familiares",
+            "Restaurante",
+            "Gimnasio",
+            "Bar",
+            "Desayuno fabuloso"
+        ],
+        "mascotas": "Información no disponible",
+        "descripcion": "Este hotel está situado frente a la playa de Mojácar y alberga un gimnasio, una sauna, una bañera de hidromasaje y un baño turco. El hotel también dispone de varias piscinas al aire libre con vistas panorámicas, rodeadas de jardines.\n\nLas habitaciones del Hotel Best Mojacar presentan una decoración de estilo mediterráneo e incluyen aire acondicionado, además de un balcón. Todas las habitaciones también cuentan con un baño privado equipado con secador de pelo.\n\nEl hotel está situado junto al campo de golf Marina, de 18 hoyos. A solo 100 metros también encontrará pistas de tenis y de baloncesto.\n\nEl Best Mojacar alberga un restaurante bufé, que presenta una cocina a la vista y ofrece servicios de desayuno y cena. Si lo prefiere, podrá relajarse en el bar del hotel.\n\nEl Best Mojacar Hotel está situado a 90 km de Almería. El parque natural de Cabo de Gata-Níjar se encuentra en las inmediaciones del hotel y alberga numerosas especies protegidas de flora y fauna. El personal del mostrador de información turística podrá ayudarle a organizar excursiones por los alrededores.",
+        "opinion": 8.2,
+        "comentarios": 5,
+        "fechaEntrada": "2025-05-17",
+        "fechaSalida": "2025-05-18",
+        "precio": 75
+    },
+    {
+        "url": "https://www.booking.com/hotel/es/catedral-almeria.es.html",
+        "id": "catedral-almeria",
+        "nombre": "Catedral Almería",
+        "direccion": "De la Catedral, 8, 04002 Almería, España",
+        "coordenadas": {
+            "latitud": 36.838375462208724,
+            "longitud": -2.466870695398029
+        },
+        "servicios": [
+            "Piscina al aire libre",
+            "Parking privado",
+            "WiFi gratis",
+            "Habitaciones familiares",
+            "Restaurante",
+            "Habitaciones sin humo",
+            "Servicio de habitaciones",
+            "Bar",
+            "Muy buen desayuno"
+        ],
+        "mascotas": "Información no disponible",
+        "descripcion": "El Hotel Cathedral Almería se encuentra a 500 metros del mar, en el centro de Almería. Ofrece una piscina en la azotea y habitaciones con ordenadores con conexión a internet ADSL.\n\nEl hotel ocupa una mansión restaurada construida en 1850.\n\nLas habitaciones del hotel son amplias y elegantes. Disponen de baño privado completo, aire acondicionado y TV.\n\nEl Almería Catedral Hotel también dispone de salones de actos equipados con tecnología moderna. La azotea del hotel ofrece vistas maravillosas a la ciudad.\n\nEl hotel está situado en la plaza de la Catedral, en el centro histórico y comercial de la ciudad. La Alcazaba se encuentra a solo 500 metros.",
+        "opinion": 8.6,
+        "comentarios": 1,
+        "fechaEntrada": "2025-05-17",
+        "fechaSalida": "2025-05-18",
+        "precio": 122
+    },
+    {
+        "url": "https://www.booking.com/hotel/es/roquetas-beach-roquetas-de-mar.es.html",
+        "id": "roquetas-beach-roquetas-de-mar",
+        "nombre": "Moon Dreams Roquetas",
+        "marca": "SOHO Boutique",
+        "destacados": [
+            "Travel Proud"
+        ],
+        "direccion": "Avenida del Sabinar 421, 04740 Roquetas de Mar, España",
+        "coordenadas": {
+            "latitud": 36.738167,
+            "longitud": -2.61947
+        },
+        "servicios": [
+            "Piscina al aire libre",
+            "WiFi gratis",
+            "Habitaciones familiares",
+            "Adaptado personas de movilidad reducida",
+            "Habitaciones sin humo",
+            "Restaurante",
+            "Servicio de habitaciones",
+            "Bar",
+            "Muy buen desayuno"
+        ],
+        "mascotas": "Información no disponible",
+        "descripcion": "El Moon Dreams Roquetas**** se encuentra a 5 minutos del paseo marítimo del Mar, en el centro de Roquetas de Mar. Desde aquí se puede acceder al puerto de Roquetas y a las playas de La Romanilla y Las Salinas, situadas a pocos minutos.\n\nEl hotel ofrece wifi gratuita, recepción 24 horas y consigna de equipaje.\n\nLas habitaciones tienen aire acondicionado y TV de pantalla plana. Todas cuentan con baño privado con ducha o bañera y secador de pelo. Se proporcionan toallas y ropa de cama.\n\nOfrece piscina al aire libre y cafetería que sirve desayunos buffet, almuerzos y cenas.",
+        "opinion": 7.5,
+        "comentarios": 745,
+        "fechaEntrada": "2025-05-17",
+        "fechaSalida": "2025-05-18",
+        "precio": 71
+    },
+    {
+        "url": "https://www.booking.com/hotel/es/portomagno-by-alegria.es.html",
+        "id": "portomagno-by-alegria",
+        "nombre": "Hotel Moon Dreams Portomagno",
+        "marca": "SOHO Boutique",
+        "destacados": [
+            "Frente a la playa"
+        ],
+        "direccion": "Paseo Marítimo, S/N, 04720 Aguadulce, España",
+        "coordenadas": {
+            "latitud": 36.810644037558106,
+            "longitud": -2.5695213675498962
+        },
+        "servicios": [
+            "2 piscinas",
+            "Parking privado",
+            "WiFi gratis",
+            "Situado frente a la playa",
+            "Restaurante",
+            "Habitaciones sin humo",
+            "Adaptado personas de movilidad reducida",
+            "Bar",
+            "Buen desayuno"
+        ],
+        "mascotas": "Información no disponible",
+        "descripcion": "El Hotel Moon Dreams Portomagno se encuentra frente al mar en Aguadulce y ofrece varias piscinas al aire libre.\n\nTodas las habitaciones tienen aire acondicionado, balcón, minibar y TV. Hay baño con bañera, ducha, secador de pelo y artículos de aseo gratuitos.\n\nSe ofrece WiFi gratuita en las zonas comunes. El establecimiento alberga gimnasio.\n\nEl establecimiento cuenta con un programa diario de animación y una sala de juegos con mesas de ping-pong y de billar. También hay una tienda de regalos.\n\nEl Hotel Moon Dreams Portomagno se encuentra a 400 metros del precioso puerto deportivo de Aguadulce y a 7 km del club de golf La Envia.",
+        "opinion": 7.4,
+        "comentarios": 4,
+        "fechaEntrada": "2025-05-17",
+        "fechaSalida": "2025-05-18",
+        "precio": 105
+    },
+    {
+        "url": "https://www.booking.com/hotel/es/hotel-spa-calagrande-cabo-de-gata.es.html",
+        "id": "hotel-spa-calagrande-cabo-de-gata",
+        "nombre": "Hotel Spa Calagrande Cabo de Gata",
+        "destacados": [
+            "Frente a la playa",
+            "Traslado aeropuerto"
+        ],
+        "direccion": "Calle Navegante, 1, 04116 Las Negras, España",
+        "coordenadas": {
+            "latitud": 36.88155796160801,
+            "longitud": -2.0067402720451355
+        },
+        "servicios": [
+            "2 piscinas",
+            "Spa y centro de bienestar",
+            "Parking privado",
+            "WiFi gratis",
+            "Situado frente a la playa",
+            "Habitaciones sin humo",
+            "Gimnasio",
+            "Adaptado personas de movilidad reducida",
+            "Bar",
+            "Buen desayuno"
+        ],
+        "mascotas": "Información no disponible",
+        "descripcion": "Este hotel spa elegante se encuentra dentro del hermoso parque natural del Cabo de Gata-Níjar. La playa se halla a solo 150 metros. El Hotel Spa Calagrande cuenta con una piscina al aire libre y una bañera de hidromasaje con vistas al Cerro Negro.\n\nLas habitaciones del hotel son elegantes y tienen terraza amueblada. Se pueden solicitar habitaciones con vistas al mar. Las habitaciones también incluyen TV vía satélite de pantalla plana, colchón de látex y wifi gratis. Las villas disponen de bañera de hidromasaje.\n\nEl Hotel Spa Calagrande Cabo de Gata cuenta con sauna, baño turco y piscina cubierta climatizada con chorros de agua, disponibles por un suplemento.\n\nEl restaurante del Spa Calagrande Cabo de Gata está rodeado de jardines y sirve platos típicos de la región, así como pescado fresco del Mediterráneo y especialidades de pasta. Los huéspedes también pueden tomar bebidas en la terraza.",
+        "opinion": 8.8,
+        "comentarios": 1,
+        "fechaEntrada": "2025-05-17",
+        "fechaSalida": "2025-05-18",
+        "precio": 191
+    },
+    {
+        "url": "https://www.booking.com/hotel/es/laperla.es.html",
+        "id": "laperla",
+        "nombre": "La Perla",
+        "direccion": "Plaza del Carmen, 7, 04003 Almería, España",
+        "coordenadas": {
+            "latitud": 36.84208264085031,
+            "longitud": -2.4650360644318425
+        },
+        "servicios": [
+            "Parking",
+            "WiFi gratis",
+            "Habitaciones familiares",
+            "Habitaciones sin humo",
+            "Buen desayuno"
+        ],
+        "mascotas": "Información no disponible",
+        "descripcion": "La Perla Hotel se halla en pleno centro de Almería, a solo 500 metros de la catedral y a 37,5 km de Cabo de Gata. Ofrece alojamiento confortable con una buena relación calidad-precio, WiFi gratuita, restaurante y cafetería.\n\nLas habitaciones disponen de aire acondicionado y baño privado. También hay TV y caja fuerte.\n\nEl Hotel La Perla cuenta con recepción 24 horas y mostrador de información turística. Hay numerosos restaurantes y bares de tapas en los alrededores del hotel.\n\nEl hotel está situado en el centro histórico de la ciudad, en el barrio de Puerta Purchena, y está bien comunicado con la Alcazaba. El puerto de Almería y las playas de la ciudad quedan a unos 10 minutos a pie. Hay enlaces en autobús con un horario regular.",
+        "opinion": 8.1,
+        "comentarios": 3,
+        "fechaEntrada": "2025-05-17",
+        "fechaSalida": "2025-05-18",
+        "precio": 122
+    },
+    {
+        "url": "https://www.booking.com/hotel/es/museo-lucainena.es.html",
+        "id": "museo-lucainena",
+        "nombre": "HOTEL MUSEO Lucainena",
+        "direccion": "Calle Maestro Paco, 04210 Lucainena de las Torres, España",
+        "coordenadas": {
+            "latitud": 37.040924598606,
+            "longitud": -2.1986962
+        },
+        "servicios": [
+            "Habitaciones sin humo",
+            "WiFi gratis",
+            "Gimnasio",
+            "Parking gratis",
+            "Restaurante",
+            "Bar",
+            "Desayuno"
+        ],
+        "mascotas": "Información no disponible",
+        "descripcion": "HOTEL MUSEO Lucainena se encuentra en Lucainena de las Torres, a 46 km de Marina Golf Mojácar, y ofrece alojamiento con centro de fitness, parking privado gratis, restaurante y bar. Todas las opciones de alojamiento de este hotel de 2 estrellas tienen vistas a la ciudad y wifi gratis. Este alojamiento libre de humo está a 11 km de Almeria Circuit.\n\nLas habitaciones del alojamiento disponen de baño privado con ducha, TV de pantalla plana y aire acondicionado. Algunas habitaciones también están equipadas con terraza. En el hotel, cada habitación tiene ropa de cama y toallas.\n\nHOTEL MUSEO Lucainena ofrece desayuno buffet o continental.\n\nDesierto de Tabernas está a 32 km del alojamiento. El aeropuerto (Aeropuerto de Almería) está a 44 km.",
+        "opinion": 8.8,
+        "comentarios": 98,
+        "fechaEntrada": "2025-05-17",
+        "fechaSalida": "2025-05-18",
+        "precio": 48
+    },
+    {
+        "url": "https://www.booking.com/hotel/es/vera-playa-club.es.html",
+        "id": "vera-playa-club",
+        "nombre": "Playavera",
+        "marca": "Senator Hotels & Resort",
+        "destacados": [
+            "Frente a la playa",
+            "Certificación de sostenibilidad"
+        ],
+        "direccion": "Carretera Garrucha-Villaricos, s/n, 04620 Vera, España",
+        "coordenadas": {
+            "latitud": 37.227494391776844,
+            "longitud": -1.8011918663978577
+        },
+        "servicios": [
+            "2 piscinas",
+            "Parking en el alojamiento",
+            "WiFi gratis",
+            "Situado frente a la playa",
+            "Habitaciones familiares",
+            "Restaurante",
+            "Gimnasio",
+            "Tetera/cafetera en todas las habitaciones",
+            "Bar",
+            "Desayuno"
+        ],
+        "mascotas": "Información no disponible",
+        "descripcion": "Este hotel naturista se encuentra en Vera Playa y ofrece piscinas cubiertas y al aire libre, un gimnasio y zona con conexión Wi-Fi gratuita. Las habitaciones son coloridas e incluyen aire acondicionado, balcón amueblado y TV vía satélite.\n\nLa piscina al aire libre del Vera Playa Club Hotel dispone de toboganes, chorros y zona de hidromasaje. Hay una terraza con tumbonas rodeada de palmeras. Los huéspedes también pueden divertirse en el campo de minigolf.\n\nEl restaurante bufé sirve gran variedad de platos españoles e internacionales. También hay un salón bar, un pub y un club de playa en temporada alta. Se ofrece animación nocturna y los niños cuentan con clubes de actividades.\n\nEste hotel está situado en la costa de Almería, a 15 minutos en coche del centro de Vera. La ciudad y el puerto de Garrucha se hallan a 6 km.",
+        "opinion": 8.0,
+        "comentarios": 646,
+        "fechaEntrada": "2025-05-17",
+        "fechaSalida": "2025-05-18",
+        "precio": 84
+    },
+    {
+        "url": "https://www.booking.com/hotel/es/valle-del-este-golf-resort.es.html",
+        "id": "valle-del-este-golf-resort",
+        "nombre": "Hotel Valle del Este",
+        "direccion": "Urbanización Valle del Este, s/n, 04620 Vera, España",
+        "coordenadas": {
+            "latitud": 37.20208404763921,
+            "longitud": -1.8933740258216858
+        },
+        "servicios": [
+            "Piscina al aire libre",
+            "Spa y centro de bienestar",
+            "Parking gratis",
+            "WiFi gratis",
+            "Habitaciones familiares",
+            "Restaurante",
+            "Gimnasio",
+            "Habitaciones sin humo",
+            "Bar",
+            "Muy buen desayuno"
+        ],
+        "mascotas": "Información no disponible",
+        "descripcion": "El Valle del Este, un establecimiento de 4 estrellas, está situado en una zona pintoresca del este de Almería y cuenta con un club de playa, un spa y un club de golf. También dispone de un club deportivo y habitaciones con vistas al complejo.\n\nEl campo de golf del Hotel Valle del Este tiene 18 hoyos y está rodeado por un sendero panorámico de 9 km. Asimismo, en la playa de Vera hay un club de playa con piscina y escuela de navegación.\n\nEl Valle del Este ofrece a los huéspedes acceso gratuito al gimnasio y un spa con duchas de efecto lluvia, sauna, ducha turca y bañera de hidromasaje, todo disponible por un suplemento.\n\nEl restaurante buffet sirve cocina internacional y goza de vistas al campo de golf. También hay un restaurante asador junto a la piscina y un restaurante en el club de playa del hotel.\n\nEl parque acuático AquaVera está a 15 minutos en coche del Golf Resort. El hotel se halla junto a la autopista A-7, que recorre la costa mediterránea española.",
+        "opinion": 8.4,
+        "comentarios": 1,
+        "fechaEntrada": "2025-05-17",
+        "fechaSalida": "2025-05-18",
+        "precio": 146
+    },
+    {
+        "url": "https://www.booking.com/hotel/es/las-palmas-carboneras.es.html",
+        "id": "las-palmas-carboneras",
+        "nombre": "Hotel Las Palmas",
+        "destacados": [
+            "Frente a la playa"
+        ],
+        "direccion": "CR/ Faro Mesa Roldán, 21, 04140 Carboneras, España",
+        "coordenadas": {
+            "latitud": 36.99479382391428,
+            "longitud": -1.8961957097053528
+        },
+        "servicios": [
+            "Parking privado",
+            "WiFi gratis",
+            "Situado frente a la playa",
+            "Habitaciones sin humo",
+            "Adaptado personas de movilidad reducida",
+            "Restaurante",
+            "Habitaciones familiares",
+            "Bar",
+            "Muy buen desayuno"
+        ],
+        "mascotas": "Información no disponible",
+        "descripcion": "Hotel Las Palmas ofrece alojamiento de 2 estrellas en Carboneras, frente a la playa, y dispone de restaurante y bar. El alojamiento se encuentra a pocos pasos de Playa de Carboneras, a 21 km de Marina Golf Mojácar y a 24 km de Marina Golf-Mojácar. Hay wifi gratis y se ofrece parking privado por un suplemento.\n\nEn el hotel, todas las habitaciones disponen de aire acondicionado, escritorio, TV de pantalla plana, baño privado, ropa de cama, toallas y terraza con vistas al mar. Todas las unidades disponen de caja fuerte.\n\nEl personal de recepción puede dar consejos sobre la zona.\n\nClub de golf Valle del Este está a 32 km del alojamiento, y Club de golf Desert Springs está a 41 km. El aeropuerto (Aeropuerto de Almería) está a 55 km.",
+        "opinion": 9.0,
+        "comentarios": 214,
+        "fechaEntrada": "2025-05-17",
+        "fechaSalida": "2025-05-18",
+        "precio": 127
+    },
+    {
+        "url": "https://www.booking.com/hotel/es/casa-en-cabo-de-gata.es.html",
+        "id": "casa-en-cabo-de-gata",
+        "nombre": "Casa Cabo de Gata",
+        "direccion": "36A Camino de la Espuela, 04131 Retamar, España",
+        "coordenadas": {
+            "latitud": 36.8502725,
+            "longitud": -2.30376960000001
+        },
+        "servicios": [
+            "Parking gratis",
+            "Traslado aeropuerto",
+            "Wifi rápida gratis (547 Mbps)",
+            "Habitaciones familiares"
+        ],
+        "mascotas": "Información no disponible",
+        "descripcion": "Casa Cabo de Gata se encuentra en Retamar y dispone de jardín, salón de uso común, terraza y wifi gratis en todo el alojamiento. El alojamiento está a unos 2,6 km de Playa del Retamar, a 38 km de Campo de Golf La Envía y a 15 km de Museum of Almeria. Algunas unidades del alojamiento incluyen un balcón con vistas al mar.\n\nAlgunas de las habitaciones también tienen cocina con nevera, microondas y fogones.\n\nAlmeria Air Raid Shelters está a 16 km del alojamiento, y Centro Andaluz de la Fotografía está a 16 km. El aeropuerto (Aeropuerto de Almería) está a 5 km, y el alojamiento ofrece servicio de traslado de pago para ir o volver del aeropuerto.",
+        "opinion": 7.7,
+        "comentarios": 458,
+        "fechaEntrada": "2025-05-17",
+        "fechaSalida": "2025-05-18",
+        "precio": 68
+    },
+    {
+        "url": "https://www.booking.com/hotel/es/ar-golf-almerimar.es.html",
+        "id": "ar-golf-almerimar",
+        "nombre": "Hotel AR Golf Almerimar",
+        "destacados": [
+            "Playa"
+        ],
+        "direccion": "Avenida Arquitecto Julián Laguna, s/n, 04711 Almerimar, España",
+        "coordenadas": {
+            "latitud": 36.699861848455704,
+            "longitud": -2.787576913833618
+        },
+        "servicios": [
+            "2 piscinas",
+            "WiFi gratis",
+            "Parking gratis",
+            "Habitaciones sin humo",
+            "Gimnasio",
+            "Adaptado personas de movilidad reducida",
+            "Traslado aeropuerto",
+            "Servicio de habitaciones",
+            "Bar",
+            "Desayuno"
+        ],
+        "mascotas": "Información no disponible",
+        "descripcion": "Este hotel moderno cuenta con un campo de golf de 27 hoyos y está a solo 5 minutos a pie del puerto deportivo de Almerimar. Además, ofrece 2 piscinas al aire libre y alberga un centro de bienestar.\n\nEl spa del Hotel AR Golf Almerimar, disponible por un suplemento, incluye bañera de hidromasaje, sala de vapor, piscina dinámica con camas de agua y sauna, así como una zona de relajación. También se proporcionan masajes y tratamientos de belleza por un suplemento. Hay centro de fitness.\n\nLas habitaciones cuentan con aire acondicionado, WiFi gratuita, TV de pantalla plana, minibar y caja fuerte para ordenador portátil, mientras que el baño incluye artículos de aseo gratuitos.\n\nEl restaurante buffet sirve platos de cocina española e internacional. También dispone de un bar de sushi, el Ikari, que prepara innovadoras ensaladas, sushi y platos calientes. Hay un restaurante a la carta y un bar en el vestíbulo. Asimismo, el establecimiento organiza actividades de entretenimiento y actuaciones de música en directo casi todos los días y cuenta con un programa especial de animación durante la temporada de verano.\n\nEl hotel se halla a 400 metros de la playa de Almerimar y a unos 40 minutos en coche de Almería. Los huéspedes disponen de aparcamiento gratuito al aire libre y también se facilita aparcamiento subterráneo, por un suplemento.",
+        "opinion": 8.5,
+        "comentarios": 367,
+        "fechaEntrada": "2025-05-17",
+        "fechaSalida": "2025-05-18",
+        "precio": 160
+    },
+    {
+        "url": "https://www.booking.com/hotel/es/casona-granado.es.html",
+        "id": "casona-granado",
+        "nombre": "Casona Granado",
+        "destacados": [
+            "Traslado aeropuerto",
+            "Travel Proud"
+        ],
+        "direccion": "El Pilar Barriada de Lubrin, 45, 04271 El Pilar y Provincias, España",
+        "coordenadas": {
+            "latitud": 37.1889411015094,
+            "longitud": -2.1000333689153194
+        },
+        "servicios": [
+            "Piscina al aire libre",
+            "Habitaciones sin humo",
+            "Restaurante",
+            "Adaptado personas de movilidad reducida",
+            "WiFi gratis",
+            "Servicio de habitaciones",
+            "Parking gratis",
+            "Traslado aeropuerto",
+            "Bar",
+            "Desayuno excepcional"
+        ],
+        "mascotas": "Información no disponible",
+        "descripcion": "Casona Granado dispone de jardín, terraza, restaurante y bar en El Pilar y Provincias. El alojamiento está a unos 37 km de Marina Golf Mojácar, a 26 km de Almeria Circuit y a 38 km de Marina Golf-Mojácar. El hotel tiene bañera de hidromasaje y servicio de habitaciones.\n\nEn el hotel, todas las habitaciones están equipadas con armario. Las habitaciones de este alojamiento tienen baño privado con ducha y artículos de aseo gratuitos, además de wifi gratis. Algunas habitaciones también tienen vistas a la montaña. Las habitaciones de este alojamiento incluyen aire acondicionado y escritorio.\n\nHay alquiler de bicicletas y alquiler de coches en Casona Granado, y la zona es ideal para practicar senderismo y ciclismo.\n\nClub de golf Valle del Este está a 39 km del alojamiento, y Club de golf Desert Springs está a 41 km. El aeropuerto (Aeropuerto de Almería) está a 69 km, y el alojamiento ofrece servicio de traslado de pago para ir o volver del aeropuerto.",
+        "opinion": 9.4,
+        "comentarios": 103,
+        "fechaEntrada": "2025-05-17",
+        "fechaSalida": "2025-05-18",
+        "precio": 105
+    },
+    {
+        "url": "https://www.booking.com/hotel/es/playadulce.es.html",
+        "id": "playadulce",
+        "nombre": "Playadulce",
+        "marca": "Senator Hotels & Resort",
+        "destacados": [
+            "Frente a la playa",
+            "Certificación de sostenibilidad"
+        ],
+        "direccion": "Paseo del Palmeral, s/n, 04720 Aguadulce, España",
+        "coordenadas": {
+            "latitud": 36.806893910972875,
+            "longitud": -2.573423981666565
+        },
+        "servicios": [
+            "2 piscinas",
+            "WiFi gratis",
+            "Situado frente a la playa",
+            "Restaurante",
+            "Habitaciones familiares",
+            "Habitaciones sin humo",
+            "Adaptado personas de movilidad reducida",
+            "Bar",
+            "Desayuno fantástico"
+        ],
+        "mascotas": "Información no disponible",
+        "descripcion": "Este hotel frente al mar está rodeado de jardines y cuenta con una piscina al aire libre con tumbonas y toallas gratuitas. El Playadulce ofrece conexión Wi-Fi gratuita en las zonas comunes de la 4a planta.\n\nLas instalaciones del Playadulce incluyen una pista de tenis y un minigolf, disponibles por un suplemento. También hay una piscina cubierta climatizada. En las inmediaciones hay 3 campos de golf, como La Envia. El hotel se encuentra en el centro de la ciudad. El Torito Beach Club está abierto en temporada alta.\n\nAlgunas habitaciones del Playadulce tienen balcón o terraza y TV vía satélite. El aire acondicionado y la calefacción están disponibles en temporada.\n\nLos adultos podrán utilizar el Acquaplaya Spa Centre del Playasol Spa Hotel. Roquetas de Mar. Incluye un circuito de spa y una amplia gama de tratamientos.\n\nEl restaurante Andalucía ofrece un desayuno bufé y cocina en vivo. La zona para bebés incluye instalaciones gratuitas para los padres. Se ofrece un completo programa de animación para adultos y niños. También hay un bar y un pub.",
+        "opinion": 8.4,
+        "comentarios": 994,
+        "fechaEntrada": "2025-05-17",
+        "fechaSalida": "2025-05-18",
+        "precio": 88
+    },
+    {
+        "url": "https://www.booking.com/hotel/es/balneario-san-nicolas.es.html",
+        "id": "balneario-san-nicolas",
+        "nombre": "Balneario San Nicolas",
+        "direccion": "Baños,  2 , 04400 Alhama de Almería, España",
+        "coordenadas": {
+            "latitud": 36.95991421865953,
+            "longitud": -2.5724583864212036
+        },
+        "servicios": [
+            "Spa y centro de bienestar",
+            "Habitaciones sin humo",
+            "Adaptado personas de movilidad reducida",
+            "Restaurante",
+            "WiFi gratis",
+            "Parking privado",
+            "Bar",
+            "Buen desayuno"
+        ],
+        "mascotas": "Información no disponible",
+        "descripcion": "Balneario San Nicolas se encuentra en Alhama de Almería, a 38 km de Campo de Golf La Envía, y ofrece alojamiento con jardín, parking privado, salón de uso común y terraza. Este alojamiento ofrece restaurante, recepción 24 horas y servicio de conserjería, además de wifi gratis. Hay bar.\n\nEn el hotel se sirve un desayuno buffet.\n\nDesierto de Tabernas está a 23 km del alojamiento, y Almeria Air Raid Shelters está a 25 km. El aeropuerto (Aeropuerto de Almería) está a 29 km.",
+        "opinion": 6.8,
+        "comentarios": 365,
+        "fechaEntrada": "2025-05-17",
+        "fechaSalida": "2025-05-18",
+        "precio": 57
+    },
+    {
+        "url": "https://www.booking.com/hotel/es/la-parrilla.es.html",
+        "id": "la-parrilla",
+        "nombre": "Hotel la Parrilla",
+        "direccion": "Plaza del pueblo, 4, 04800 Albox, España",
+        "coordenadas": {
+            "latitud": 37.39007207572725,
+            "longitud": -2.147585131282767
+        },
+        "servicios": [
+            "Habitaciones sin humo",
+            "Traslado aeropuerto",
+            "Adaptado personas de movilidad reducida",
+            "WiFi gratis",
+            "Restaurante",
+            "Habitaciones familiares",
+            "Bar",
+            "Desayuno excepcional"
+        ],
+        "mascotas": "Información no disponible",
+        "descripcion": "Hotel la Parrilla está en Albox, a 43 km de Club de golf Desert Springs, y tiene terraza, restaurante y bar. Este hotel de 1 estrella ofrece salón de uso común y habitaciones con aire acondicionado, wifi gratis y baño privado. Este alojamiento hipoalergénico se encuentra a 45 km de Club de golf Valle del Este.\n\nEn el hotel, las habitaciones tienen escritorio y TV. En Hotel la Parrilla, las habitaciones incluyen ropa de cama y toallas.\n\nEl personal de la recepción 24 horas habla inglés, español, italiano y ruso, y puede ayudar a la clientela a planificar su estancia.\n\nEl aeropuerto (Aeropuerto de Almería) está a 109 km, y el alojamiento ofrece servicio de traslado de pago para ir o volver del aeropuerto.",
+        "opinion": 8.7,
+        "comentarios": 331,
+        "fechaEntrada": "2025-05-17",
+        "fechaSalida": "2025-05-18",
+        "precio": 73
+    },
+    {
+        "url": "https://www.booking.com/hotel/es/tio-felipe.es.html",
+        "id": "tio-felipe",
+        "nombre": "Hotel Tio Felipe",
+        "destacados": [
+            "Playa"
+        ],
+        "direccion": "San Antonio 15, 04140 Carboneras, España",
+        "coordenadas": {
+            "latitud": 36.99754871269527,
+            "longitud": -1.8942269682884216
+        },
+        "servicios": [
+            "WiFi gratis",
+            "Habitaciones sin humo",
+            "Restaurante",
+            "Habitaciones familiares",
+            "Bar",
+            "Desayuno"
+        ],
+        "mascotas": "Información no disponible",
+        "descripcion": "Hotel Tio Felipe, que tiene bar, está en la región de Andalucía, Carboneras, a 3 min a pie de Playa de Carboneras y a 21 km de Marina Golf Mojácar. Este hotel de 2 estrellas ofrece restaurante y habitaciones con aire acondicionado, wifi gratis y baño privado. Este alojamiento libre de humo se encuentra a 24 km de Marina Golf-Mojácar.\n\nEn el hotel, todas las habitaciones disponen de escritorio y TV de pantalla plana. En Hotel Tio Felipe, las habitaciones cuentan con ropa de cama y toallas.\n\nLa clientela puede practicar actividades en Carboneras y alrededores, como senderismo, pesca y ciclismo.\n\nClub de golf Valle del Este está a 31 km del alojamiento, y Club de golf Desert Springs está a 41 km. El aeropuerto (Aeropuerto de Almería) está a 55 km.",
+        "opinion": 7.6,
+        "comentarios": 233,
+        "fechaEntrada": "2025-05-17",
+        "fechaSalida": "2025-05-18",
+        "precio": 64
+    }
+]

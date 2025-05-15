@@ -217,7 +217,7 @@ def scrape_booking_almeria(checkin_date, checkout_date):
                         'nombre': hotel_data.get('nombre'),
                         'marca': hotel_details.get('marca'), # Get marca from hotel_details
                         'destacados': hotel_details.get('Destacados'), # Add Destacados
-                        'localidad': hotel_data.get('Dirección'),
+                        'direccion': hotel_details.get('Dirección_detalle'), # Get Dirección from hotel_details
                         'coordenadas': hotel_details.get('Coordenadas'), # Get Coordenadas from hotel_details
                         'servicios': hotel_details.get('Servicios populares'), # Get Servicios populares from hotel_details
                         'mascotas': hotel_details.get('¿Mascotas?'), # Get ¿Mascotas? from hotel_details
@@ -236,6 +236,7 @@ def scrape_booking_almeria(checkin_date, checkout_date):
             hotel_list.append(hotel_data)
 
         # TODO: Implement pagination if needed
+
 
     except requests.exceptions.RequestException as e:
         print(f"Error fetching the page: {e}")
@@ -391,6 +392,40 @@ def scrape_hotel_details(url):
             print(f"Error extracting Descripción from {url}: {e}")
             details['Descripción'] = None
 
+        # Dirección (from hotel page)
+        try:
+            address_container = soup.select_one('div.b99b6ef58f.cb4b7a25d9')
+            if address_container:
+                full_text = address_container.get_text(strip=True)
+                # Find the second div within the container
+                second_div = address_container.select_one('div:nth-of-type(2)')
+                if second_div:
+                    second_div_text = second_div.get_text(strip=True)
+                    # Split the full text by the second div's text
+                    address_parts = full_text.split(second_div_text, 1)
+                    if address_parts:
+                        extracted_address = address_parts[0].strip()
+                    else:
+                        extracted_address = full_text.strip() # Fallback if split fails
+                else:
+                    extracted_address = full_text.strip() # If no second div, take all text
+
+                # Find "España" and truncate
+                if extracted_address:
+                    espana_index = extracted_address.find('España')
+                    if espana_index != -1:
+                        # Include "España" in the result
+                        details['Dirección_detalle'] = extracted_address[:espana_index + len('España')]
+                    else:
+                        details['Dirección_detalle'] = extracted_address # Keep original if "España" not found
+                else:
+                    details['Dirección_detalle'] = None # Keep None if no address extracted
+            else:
+                details['Dirección_detalle'] = None
+        except Exception as e:
+            print(f"Error extracting Dirección from hotel page {url}: {e}")
+            details['Dirección_detalle'] = None
+
         # Precio (Already extracted from search results, but confirming selector if needed)
         # The price on the individual page might be different or more detailed.
         # For now, we'll rely on the price from the search results as requested initially.
@@ -411,8 +446,8 @@ def scrape_hotel_details(url):
 
 if __name__ == "__main__":
     # Use the dates provided by the user
-    checkin = "2025-05-16"
-    checkout = "2025-05-17"
+    checkin = "2025-05-17"
+    checkout = "2025-05-18"
 
     print(f"Starting scraping for Almería from {checkin} to {checkout}...")
     hotels_data = scrape_booking_almeria(checkin, checkout)
