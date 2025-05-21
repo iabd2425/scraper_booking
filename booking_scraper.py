@@ -5,25 +5,42 @@ import re
 import time
 import random
 from urllib.parse import urlparse, parse_qs
+from datetime import date, timedelta
 
-def scrape_booking_almeria(checkin_date, checkout_date):
+def get_province_from_dest_id(dest_id):
+    """Maps a destination ID to a province name."""
+    province_map = {
+        '1363': 'Almería',
+        '755': 'Granada',
+        '766': 'Málaga',
+        '747': 'Cadíz',
+        '774': 'Sevilla',
+        '758': 'Huelva',
+        '750': 'Cordoba',
+        '759': 'Jaen',
+    }
+    return province_map.get(dest_id, 'Unknown Province')
+
+def scrape_booking_region(dest_id, checkin_date, checkout_date):
     """
-    Scrapes hotel data from Booking.com for Almería province.
+    Scrapes hotel data from Booking.com for a specified region based on dest_id.
 
     Args:
+        dest_id (str): The destination ID for the region (e.g., '1363' for Almería, '755' for Granada).
         checkin_date (str): Check-in date in 'YYYY-MM-DD' format.
         checkout_date (str): Check-out date in 'YYYY-MM-DD' format.
 
     Returns:
         list: A list of dictionaries, where each dictionary represents a hotel.
     """
-    # Base URL for Booking.com search results for Almería
-    # You might need to find the correct URL for Almería province specifically.
-    # This is a placeholder URL, you'll need to replace it with the actual one.
+    # Base URL for Booking.com search results
     # The dates and currency will be added as query parameters.
     # Added selected_currency=EUR to try and force EUR prices.
-    base_url = "https://www.booking.com/searchresults.es.html?lang=es%E2%82%AC&dest_id=1363&dest_type=region&ac_langcode=es&nflt=ht_id%3D204&shw_aparth=0&selected_currency=EUR&checkin={}&checkout={}"
+    base_url = f"https://www.booking.com/searchresults.es.html?lang=es%E2%82%8AC&dest_id={dest_id}&dest_type=region&ac_langcode=es&nflt=ht_id%3D204&shw_aparth=0&selected_currency=EUR&checkin={{}}&checkout={{}}"
     url = base_url.format(checkin_date, checkout_date)
+
+    # Get the province name from the dest_id
+    province_name = get_province_from_dest_id(dest_id)
 
     user_agents = [
         'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
@@ -68,24 +85,35 @@ def scrape_booking_almeria(checkin_date, checkout_date):
                 url_element = hotel.select_one('a[data-testid="title-link"]')
                 if url_element and 'href' in url_element.attrs:
                     full_url = url_element['href']
-                    # Remove date parameters from URL
-                    clean_url = full_url.split('?')[0]
-                    hotel_data['url'] = clean_url
+                    hotel_data['url'] = full_url # Keep full URL to extract locality
 
                     # Extract ID from the URL path (text after last '/' and before '.html')
-                    last_part = clean_url.split('/')[-1]
+                    last_part = full_url.split('/')[-1]
                     hotel_id_with_extension = last_part.split('.html')[0]
                     # Eliminar todo lo que va después del primer punto inclusive
                     hotel_id = hotel_id_with_extension.split('.')[0]
                     hotel_data['id'] = hotel_id
 
+                    # Extract locality from the URL
+                    parsed_hotel_url = urlparse(full_url)
+                    hotel_query_params = parse_qs(parsed_hotel_url.query)
+                    locality = hotel_query_params.get('ss', [None])[0]
+                    if locality:
+                        # Replace '+' with spaces
+                        hotel_data['localidad'] = locality.replace('+', ' ')
+                    else:
+                        hotel_data['localidad'] = None
+
+
                 else:
                     hotel_data['url'] = None
                     hotel_data['id'] = None
+                    hotel_data['localidad'] = None # Also set locality to None if URL is missing
             except Exception as e:
-                print(f"Error extracting URL or Hotel ID: {e}")
+                print(f"Error extracting URL, Hotel ID, or Localidad: {e}")
                 hotel_data['url'] = None
                 hotel_data['id'] = None
+                hotel_data['localidad'] = None # Also set locality to None in case of error
 
             # Nombre
             try:
@@ -98,13 +126,23 @@ def scrape_booking_almeria(checkin_date, checkout_date):
             # marca (Often not directly available on search results, might need to visit hotel page)
             hotel_data['marca'] = None # Placeholder
 
-            # Dirección
+            # Dirección y Localidad
             try:
                 address_element = hotel.select_one('span[data-testid="address"]')
-                hotel_data['Dirección'] = address_element.get_text(strip=True) if address_element else None
+                if address_element:
+                    full_address = address_element.get_text(strip=True)
+                    # Assuming the locality is the first part before a comma or the whole string
+                    address_parts = full_address.split(',', 1)
+                    hotel_data['localidad'] = address_parts[0].strip()
+                    hotel_data['Dirección'] = full_address # Keep the full address as Dirección
+                else:
+                    hotel_data['localidad'] = None
+                    hotel_data['Dirección'] = None
             except Exception as e:
-                print(f"Error extracting Dirección: {e}")
+                print(f"Error extracting Dirección or Localidad: {e}")
+                hotel_data['localidad'] = None
                 hotel_data['Dirección'] = None
+
 
             # Coordenadas (Often not directly available on search results, might need to visit hotel page or use geocoding)
             hotel_data['Coordenadas'] = None # Placeholder
@@ -198,8 +236,8 @@ def scrape_booking_almeria(checkin_date, checkout_date):
                     except (ValueError, TypeError):
                         print(f"Could not convert price to float: {cleaned_price_text}")
                         hotel_data['Precio'] = None
-                else:
-                    hotel_data['Precio'] = None
+                    else:
+                        hotel_data['Precio'] = None
 
             except Exception as e:
                 print(f"Error extracting or processing Precio: {e}")
@@ -217,10 +255,14 @@ def scrape_booking_almeria(checkin_date, checkout_date):
                         'nombre': hotel_data.get('nombre'),
                         'marca': hotel_details.get('marca'), # Get marca from hotel_details
                         'destacados': hotel_details.get('Destacados'), # Add Destacados
+                        'provincia': province_name, # Add the province name here
+                        'localidad': hotel_data.get('localidad'), # Add the locality here
                         'direccion': hotel_details.get('Dirección_detalle'), # Get Dirección from hotel_details
-                        'coordenadas': hotel_details.get('Coordenadas'), # Get Coordenadas from hotel_details
+                        'Coordenadas': { # Create a nested dictionary for coordinates
+                            'lat': hotel_details.get('lat'), # Get lat from hotel_details
+                            'lon': hotel_details.get('lon'), # Get lon from hotel_details
+                        },
                         'servicios': hotel_details.get('Servicios populares'), # Get Servicios populares from hotel_details
-                        'mascotas': hotel_details.get('¿Mascotas?'), # Get ¿Mascotas? from hotel_details
                         'descripcion': hotel_details.get('Descripción'), # Get Descripción from hotel_details
                         'puntuacion': hotel_data.get('Puntuación'),
                         'opinion': hotel_data.get('Opinión'),
@@ -334,7 +376,8 @@ def scrape_hotel_details(url):
                 coords_str = coords_element['data-atlas-latlng']
                 if coords_str:
                     lat, lon = coords_str.split(',')
-                    coords_data = {"latitud": float(lat), "longitud": float(lon)}
+                    details['lat'] = float(lat)
+                    details['lon'] = float(lon)
             else:
                 # Fallback to meta tags if the primary selector is not found
                 lat_meta = soup.find('meta', {'property': 'booking_com:location:latitude'})
@@ -351,13 +394,13 @@ def scrape_hotel_details(url):
 
                 if coords_content and coords_content != ',':
                     lat, lon = coords_content.split(',')
-                    coords_data = {"latitud": float(lat), "longitud": float(lon)}
-
-            details['Coordenadas'] = coords_data
+                    details['lat'] = float(lat)
+                    details['lon'] = float(lon)
 
         except Exception as e:
             print(f"Error extracting Coordenadas from {url}: {e}")
-            details['Coordenadas'] = None
+            details['lat'] = None
+            details['lon'] = None
 
         # Servicios populares
         try:
@@ -366,23 +409,6 @@ def scrape_hotel_details(url):
         except Exception as e:
             print(f"Error extracting Servicios populares from {url}: {e}")
             details['Servicios populares'] = None
-
-        # ¿Mascotas?
-        try:
-            # Find the element containing "Mascotas" and then the following div with the policy
-            pets_header = soup.find('div', class_='dace71f323', string=re.compile(r'Mascotas', re.IGNORECASE))
-            if pets_header:
-                pets_policy_element = pets_header.find_next_sibling('div', class_='c92998be48')
-                if pets_policy_element:
-                    policy_text = pets_policy_element.get_text(strip=True)
-                    details['¿Mascotas?'] = "Sí se admiten" if "se admiten" in policy_text.lower() else "No se admiten"
-                else:
-                     details['¿Mascotas?'] = "Información no disponible"
-            else:
-                details['¿Mascotas?'] = "Información no disponible"
-        except Exception as e:
-            print(f"Error extracting ¿Mascotas? from {url}: {e}")
-            details['¿Mascotas?'] = "Error al extraer"
 
         # Descripción
         try:
@@ -445,17 +471,35 @@ def scrape_hotel_details(url):
     return details
 
 if __name__ == "__main__":
-    # Use the dates provided by the user
-    checkin = "2025-05-17"
-    checkout = "2025-05-18"
+    # Get today's date as the starting check-in date
+    start_date = date.today()
 
-    print(f"Starting scraping for Almería from {checkin} to {checkout}...")
-    hotels_data = scrape_booking_almeria(checkin, checkout)
+    # List of destination IDs for the provinces to scrape
+    # '1363': 'Almería'
+    # '755': 'Granada'
+    dest_ids_to_scrape = ['1363', '755']
 
-    if hotels_data:
-        output_filename = "booking_almeria_hotels.json"
-        with open(output_filename, 'w', encoding='utf-8') as f:
-            json.dump(hotels_data, f, ensure_ascii=False, indent=4)
-        print(f"Scraping finished. Data saved to {output_filename}")
-    else:
-        print("Scraping failed.")
+    # Scrape for each province and for 3 consecutive days
+    for dest_id in dest_ids_to_scrape:
+        province_name = get_province_from_dest_id(dest_id)
+        print(f"--- Starting scraping for {province_name} ---")
+
+        for i in range(3):
+            checkin_date = start_date + timedelta(days=i)
+            checkout_date = checkin_date + timedelta(days=1)
+
+            checkin_str = checkin_date.strftime("%Y-%m-%d")
+            checkout_str = checkout_date.strftime("%Y-%m-%d")
+
+            print(f"Starting scraping for {province_name} from {checkin_str} to {checkout_str}...")
+            hotels_data = scrape_booking_region(dest_id, checkin_str, checkout_str)
+
+            if hotels_data:
+                # Define the filename based on province and check-in date
+                filename = f"{province_name.lower().replace(' ', '_')}_{checkin_date.strftime('%Y%m%d')}.json"
+                with open(filename, 'w', encoding='utf-8') as f:
+                    json.dump(hotels_data, f, ensure_ascii=False, indent=4)
+                print(f"Successfully scraped and saved data for {province_name} on {checkin_str} to {filename}")
+            else:
+                print(f"Failed to scrape data for {province_name} on {checkin_str}")
+        print(f"--- Finished scraping for {province_name} ---")
