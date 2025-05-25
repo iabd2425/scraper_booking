@@ -258,7 +258,7 @@ def scrape_booking_region(dest_id, checkin_date, checkout_date):
                         'provincia': province_name, # Add the province name here
                         'localidad': hotel_data.get('localidad'), # Add the locality here
                         'direccion': hotel_details.get('Dirección_detalle'), # Get Dirección from hotel_details
-                        'Coordenadas': { # Create a nested dictionary for coordinates
+                        'location': { # Create a nested dictionary for coordinates
                             'lat': hotel_details.get('lat'), # Get lat from hotel_details
                             'lon': hotel_details.get('lon'), # Get lon from hotel_details
                         },
@@ -498,7 +498,9 @@ if __name__ == "__main__":
                 # Define the filename based on province and check-in date
                 filename = f"{province_name.lower().replace(' ', '_')}_{checkin_date.strftime('%Y%m%d')}.json"
                 with open(filename, 'w', encoding='utf-8') as f:
-                    json.dump(hotels_data, f, ensure_ascii=False, indent=4)
+                    for hotel in hotels_data:
+                        linea_json = json.dumps(hotel, ensure_ascii=False)
+                        f.write(linea_json + "\n")
                 print(f"Successfully scraped and saved data for {province_name} on {checkin_str} to {filename}")
             else:
                 print(f"Failed to scrape data for {province_name} on {checkin_str}")
