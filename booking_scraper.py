@@ -1,3 +1,6 @@
+from IPython import get_ipython
+from IPython.display import display
+# %%
 import requests
 from bs4 import BeautifulSoup
 import json
@@ -5,7 +8,38 @@ import re
 import time
 import random
 from urllib.parse import urlparse, parse_qs
-from datetime import date, timedelta
+from datetime import date, timedelta, datetime # Importar datetime aquí
+import logging
+import os
+
+# Setup logging
+log_directory = '.'  # Log to the current directory
+log_filename = f"scraper_{datetime.now().strftime('%Y%m%d')}.log"
+full_log_path = os.path.join(log_directory, log_filename)
+
+#Ensure the log directory exists
+if not os.path.exists(log_directory):
+    os.makedirs(log_directory)
+
+write_permission = False
+try:
+    # Attempt to open the file in append mode to check write permissions
+    # and ensure the file handle is closed immediately after the check.
+    with open(full_log_path, 'a') as f:
+        pass
+    write_permission = True
+except IOError as e:
+    write_permission = False
+    print(f"Warning: Cannot write to log file {full_log_path}. Check directory permissions. Error: {e}")
+
+# Configuración básica del logging
+logging.basicConfig(
+    filename=full_log_path,  # Nombre del archivo de log (corrección aquí)
+    level=logging.INFO,               # Nivel mínimo de mensajes que se guardarán
+    format='%(asctime)s - %(levelname)s - %(message)s'  # Formato del mensaje
+)
+
+logging.info("Logging started.")
 
 def get_province_from_dest_id(dest_id):
     """Maps a destination ID to a province name."""
@@ -61,9 +95,12 @@ def scrape_booking_region(dest_id, checkin_date, checkout_date):
     try:
         # Add a random delay before making the request
         time.sleep(random.uniform(2, 5)) # Delay between 2 and 5 seconds
+        logging.info(f"Fetching search results for dest_id {dest_id} ({province_name}) on {checkin_date}...") # Corrección aquí
 
+        print(f"Fetching URL: {url}") # Debug print for the URL
         response = requests.get(url, headers=headers)
         response.raise_for_status() # Raise an exception for bad status codes
+        print(f"Status Code: {response.status_code}") # Debug print for the status code
 
         soup = BeautifulSoup(response.content, 'html.parser')
 
@@ -72,6 +109,8 @@ def scrape_booking_region(dest_id, checkin_date, checkout_date):
         # to find the correct selector for individual hotel listings.
         # This is a placeholder selector.
         hotels = soup.select('div[data-testid="property-card"]')
+        print(f"Found {len(hotels)} hotel cards.") # Debug print for number of hotels found
+        logging.info(f"Found {len(hotels)} hotels on the search results page for {province_name}.") # Corrección aquí
 
         for hotel in hotels:
             hotel_data = {}
@@ -150,9 +189,6 @@ def scrape_booking_region(dest_id, checkin_date, checkout_date):
             # Servicios populares (Often not directly available on search results, might need to visit hotel page)
             hotel_data['Servicios populares'] = None # Placeholder
 
-            # ¿Mascotas? (Often not directly available on search results, might need to visit hotel page)
-            hotel_data['¿Mascotas?'] = None # Placeholder
-
             # Descripción (Often not fully available on search results, might need to visit hotel page)
             hotel_data['Descripción'] = None # Placeholder
 
@@ -216,9 +252,9 @@ def scrape_booking_region(dest_id, checkin_date, checkout_date):
             hotel_data['Fecha salida'] = checkout_date
 
             # Precio
+            price_text = None
             try:
                 price_element = hotel.select_one('span[data-testid="price-and-discounted-price"]')
-                price_text = None
                 if price_element:
                      price_text = price_element.get_text(strip=True)
                 else:
@@ -227,21 +263,26 @@ def scrape_booking_region(dest_id, checkin_date, checkout_date):
                     if price_element_alt:
                         price_text = price_element_alt.get_text(strip=True)
 
+                hotel_data['Precio_texto'] = price_text # Store original text for debugging
+
                 if price_text:
                     # Clean the price string: remove '€', spaces, and replace comma with dot
-                    cleaned_price_text = price_text.replace('€', '').replace(' ', '').replace(',', '.')
+                    cleaned_price_text = price_text.replace('€', '').replace(' ', '').replace('.', '').replace(',', '.') # Added .replace('.', '') to remove thousand separators
                     try:
-                        # Convert to integer
-                        hotel_data['Precio'] = int(cleaned_price_text)
+                        # Convert to float first to handle decimals if they exist
+                        hotel_data['Precio'] = float(cleaned_price_text)
                     except (ValueError, TypeError):
                         print(f"Could not convert price to float: {cleaned_price_text}")
                         hotel_data['Precio'] = None
-                    else:
-                        hotel_data['Precio'] = None
+                else:
+                    hotel_data['Precio'] = None
 
             except Exception as e:
                 print(f"Error extracting or processing Precio: {e}")
                 hotel_data['Precio'] = None
+
+            # Debug print for price extraction
+            print(f"Hotel: {hotel_data.get('nombre', 'N/A')}, Precio texto: {hotel_data.get('Precio_texto', 'N/A')}, Precio procesado: {hotel_data.get('Precio', 'N/A')}")
 
 
             # Scrape additional details from the hotel's individual page
@@ -269,7 +310,7 @@ def scrape_booking_region(dest_id, checkin_date, checkout_date):
                         'comentarios': hotel_data.get('Numero comentarios'),
                         'fechaEntrada': hotel_data.get('Fecha entrada'),
                         'fechaSalida': hotel_data.get('Fecha salida'),
-                        'precio': hotel_data.get('Precio'),
+                        'precio': hotel_data.get('Precio'), # Use the processed price
                     }
                     # Remove keys with None or empty list values to keep the output clean
                     hotel_data = {k: v for k, v in ordered_hotel_data.items() if v is not None and v != []}
@@ -316,8 +357,10 @@ def scrape_hotel_details(url):
         # Add a random delay before making the request
         time.sleep(random.uniform(2, 5)) # Delay between 2 and 5 seconds
 
+        print(f"Fetching hotel details page: {url}") # Debug print for hotel detail URL
         response = requests.get(url, headers=headers)
         response.raise_for_status() # Raise an exception for bad status codes
+        print(f"Hotel details status code: {response.status_code}") # Debug print for status code
 
         soup = BeautifulSoup(response.content, 'html.parser')
 
@@ -327,14 +370,12 @@ def scrape_hotel_details(url):
         # These are placeholder selectors and logic.
 
         # Destacados
-        # Destacados
         try:
             # Use the corrected selector for the main container of Destacados
             highlight_container = soup.select_one('span.hp__hotel_ratings.pp-header__badges.pp-header__badges--combined div[data-capla-component-boundary="b-property-web-property-page/Badges"]')
             if highlight_container:
                 # Select all span or div elements within the container
                 highlight_elements = highlight_container.select('span, div')
-                # Extract text from each element and store in a list, filtering out empty strings
                 # Extract text from each element and store in a list, filtering out empty strings
                 extracted_highlights = [elem.get_text(strip=True) for elem in highlight_elements if elem.get_text(strip=True)]
 
@@ -405,10 +446,10 @@ def scrape_hotel_details(url):
         # Servicios populares
         try:
             amenities_list = soup.select('div.hp--popular_facilities ul.e9f7361569 li.b0bf4dc58f div.aa8988bf9c span.f006e3fcbd')
-            details['Servicios populares'] = [amenity.get_text(strip=True) for amenity in amenities_list] if amenities_list else None
+            details['Servicios populares'] = [amenity.get_text(strip=True) for amenity in amenities_list] if amenities_list else [] # Use empty list if none found
         except Exception as e:
             print(f"Error extracting Servicios populares from {url}: {e}")
-            details['Servicios populares'] = None
+            details['Servicios populares'] = [] # Use empty list in case of error
 
         # Descripción
         try:
@@ -477,16 +518,21 @@ if __name__ == "__main__":
     # List of destination IDs for the provinces to scrape
     # '1363': 'Almería'
     # '755': 'Granada'
-    dest_ids_to_scrape = ['1363', '755']
+    # dest_ids_to_scrape = ['1363', '755']
+    dest_ids_to_scrape = ['1363'] # Uncomment this line and comment the one above to scrape only Almería
 
     # Scrape for each province and for 3 consecutive days
     for dest_id in dest_ids_to_scrape:
         province_name = get_province_from_dest_id(dest_id)
         print(f"--- Starting scraping for {province_name} ---")
 
-        for i in range(3):
+        # Loop for 3 consecutive days (i goes from 0 to 2)
+        # If you want 3 days, the range should be 3: range(3)
+        # If you want 2 days (today and tomorrow), range(2) is correct.
+        # Assuming you want 3 days: today, tomorrow, and the day after
+        for i in range(1): # Changed to range(3) for 3 days
             checkin_date = start_date + timedelta(days=i)
-            checkout_date = checkin_date + timedelta(days=1)
+            checkout_date = checkin_date + timedelta(days=1) # Stays 1 day
 
             checkin_str = checkin_date.strftime("%Y-%m-%d")
             checkout_str = checkout_date.strftime("%Y-%m-%d")
@@ -496,11 +542,15 @@ if __name__ == "__main__":
 
             if hotels_data:
                 # Define the filename based on province and check-in date
-                filename = f"{province_name.lower().replace(' ', '_')}_{checkin_date.strftime('%Y%m%d')}.json"
+                filename = f"{province_name.lower().replace(' ', '_')}_{checkin_date.strftime('%Y%m%d')}.ndjson" # Using .jsonl for line-delimited JSON
                 with open(filename, 'w', encoding='utf-8') as f:
                     for hotel in hotels_data:
-                        linea_json = json.dumps(hotel, ensure_ascii=False)
-                        f.write(linea_json + "\n")
+                        # print(f"Writing hotel data to JSON: {hotel}") # Debug print for hotel data before writing
+                        try:
+                            linea_json = json.dumps(hotel, ensure_ascii=False)
+                            f.write(linea_json + "\n")
+                        except Exception as e:
+                            print(f"Error writing hotel data to JSON: {e} for hotel: {hotel.get('nombre', 'N/A')}")
                 print(f"Successfully scraped and saved data for {province_name} on {checkin_str} to {filename}")
             else:
                 print(f"Failed to scrape data for {province_name} on {checkin_str}")
