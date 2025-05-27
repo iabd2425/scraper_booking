@@ -513,14 +513,14 @@ def scraping():
     # Lista de IDs de destino para las provincias a extraer
     # '1363': 'Almería'
     # '755': 'Granada'
-    dest_ids_to_scrape = ['1363', '755', '766', '747', '774', '758', '750', '759']
-    # dest_ids_to_scrape = ['1363'] #['1363'] # Descomenta esta línea y comenta la anterior para extraer solo Almería
+    # dest_ids_to_scrape = ['1363', '755', '766', '747', '774', '758', '750', '759']
+    dest_ids_to_scrape = ['1363'] #['1363'] # Descomenta esta línea y comenta la anterior para extraer solo Almería
 
     # Extrae para cada provincia y para X días consecutivos
     for dest_id in dest_ids_to_scrape:
         province_name = get_province_from_dest_id(dest_id)
         # Bucle para N días consecutivos (i va de 0 a 2)
-        for i in range(30): # Cambiado a range(N) para N días
+        for i in range(1): # Cambiado a range(N) para N días
             checkin_date = start_date + timedelta(days=i)
             checkout_date = checkin_date + timedelta(days=1) # Estancia de 1 día
 
@@ -550,7 +550,7 @@ def scraping():
 if __name__ == "__main__":
     scraping()
     # Descomentar el siguiente bloque en producción
-    schedule.every().day.at("00:30").do(scraping)
-    while True:
-        schedule.run_pending()
-        time.sleep(60)  # Espera 60 segundos entre comprobaciones
+    #schedule.every().day.at("00:30").do(scraping)
+    #while True:
+    #    schedule.run_pending()
+    #    time.sleep(60)  # Espera 60 segundos entre comprobaciones
