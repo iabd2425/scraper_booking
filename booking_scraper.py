@@ -17,28 +17,32 @@ def configurar_logging():
     log_filename = f"scraper_{datetime.now().strftime('%Y%m%d')}.log"
     full_log_path = os.path.join(OUT_DIRECTORY, log_filename)
 
-    #Crea el directorio de salida en caso de que no exista
+    # Crea el directorio de salida si no existe
     if not os.path.exists(OUT_DIRECTORY):
         os.makedirs(OUT_DIRECTORY)
 
     write_permission = False
     try:
-        # Intenta abrir el fichero en modo append para comprobar los permisos de escritura
-        # y se asegura de que el manejador del fichero se cierre inmediatamente después de la comprobación.
-        with open(full_log_path, 'a') as f:
+        with open(full_log_path, 'a'):
             pass
         write_permission = True
     except IOError as e:
         write_permission = False
         print(f"Warning: No se puede escribir en {full_log_path}. Revise los permisos de escritura. Error: {e}")
 
-    # Configuración básica del logging
-    logging.basicConfig(
-        filename=full_log_path,  # Nombre del archivo de log (corrección aquí)
-        level=logging.INFO,      # Nivel mínimo de mensajes que se guardarán
-        format='%(asctime)s - SCRAPER - %(levelname)s - %(message)s'  # Formato del mensaje
-    )
+    # Configura el logger personalizado
+    logger = logging.getLogger()
+    logger.setLevel(logging.INFO)
 
+    # Elimina todos los handlers anteriores
+    while logger.hasHandlers():
+        logger.removeHandler(logger.handlers[0])
+
+    # Crea un nuevo FileHandler con la fecha actual
+    file_handler = logging.FileHandler(full_log_path)
+    formatter = logging.Formatter('%(asctime)s - SCRAPER - %(levelname)s - %(message)s')
+    file_handler.setFormatter(formatter)
+    logger.addHandler(file_handler)
 
 def get_province_from_dest_id(dest_id):
     """Mapea ID con nombre de provincia."""
@@ -513,14 +517,14 @@ def scraping():
     # Lista de IDs de destino para las provincias a extraer
     # '1363': 'Almería'
     # '755': 'Granada'
-    dest_ids_to_scrape = ['1363', '755', '766', '747', '774', '758', '750', '759']
-    # dest_ids_to_scrape = ['1363'] #['1363'] # Descomenta esta línea y comenta la anterior para extraer solo Almería
+    #dest_ids_to_scrape = ['1363', '755', '766', '747', '774', '758', '750', '759']
+    dest_ids_to_scrape = ['1363'] #['1363'] # Descomenta esta línea y comenta la anterior para extraer solo Almería
 
     # Extrae para cada provincia y para X días consecutivos
     for dest_id in dest_ids_to_scrape:
         province_name = get_province_from_dest_id(dest_id)
         # Bucle para N días consecutivos (i va de 0 a 2)
-        for i in range(30): # Cambiado a range(N) para N días
+        for i in range(1): # Cambiado a range(N) para N días
             checkin_date = start_date + timedelta(days=i)
             checkout_date = checkin_date + timedelta(days=1) # Estancia de 1 día
 
