@@ -12,7 +12,6 @@ scraper_booking/
 ├── __pycache__/                 # Archivos temporales de Python
 └── webscp-stack/                # Entorno para despliegue en Docker/Swarm
     ├── booking_scraper.py       # Copia del script para el contenedor
-    ├── prueba_scraper.py        # Script de prueba
     ├── requirements.txt         # Dependencias para el contenedor
     ├── Dockerfile               # Imagen Docker
     └── docker-compose.yml       # Orquestación y configuración de servicios
